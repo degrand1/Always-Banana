@@ -49,8 +49,8 @@ public class UpdateLogic : MonoBehaviour {
 		NumCharactersToDisplay = 0;
 		CurrentTime = 0;
 		CurrentData = 0;
-		CurrentPatient = StartingConversation;
 		MaxNumPatients = Patients.Length;
+		CurrentPatient = StartingConversation != -1 ? StartingConversation : Random.Range(0, MaxNumPatients);
 		CurrentStringLength = Patients[CurrentPatient].Data[CurrentData].Message.Length;
 		Content.text = "";
 		//Assume the therapist or patient will always begin the conversation
