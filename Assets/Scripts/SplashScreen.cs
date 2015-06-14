@@ -18,9 +18,6 @@ public class SplashScreen : MonoBehaviour {
 	 for ( var i = 0; i < data.Length; i++ ) {
 		subtitleTexList[i] = data[i] as Texture2D;
 	 }
-
-	 // REMOVEME
-	 PlayerPrefs.SetInt( "PatientsSeen", 0 );
 	}
 	
 	// Update is called once per frame
