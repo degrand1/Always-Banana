@@ -20,7 +20,7 @@ public class SplashScreen : MonoBehaviour {
 	 }
 
 		var subtitleIndex = PlayerPrefs.GetInt( "PatientsSeen" ) - 1;
-		if ( subtitleIndex < subtitleTexList.Length ) {
+		if ( subtitleIndex < subtitleTexList.Length && subtitleIndex >= 0 ) {
 			subtitleTex = subtitleTexList[ subtitleIndex ];
 		}
 	}
