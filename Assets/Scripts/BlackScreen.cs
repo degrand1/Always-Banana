@@ -5,7 +5,7 @@ public class BlackScreen: MonoBehaviour {
 	public Texture blackTex;
 
 	private float alphaFadeValue;
-	public float fadeTimeSeconds; // seconds
+	public float fadeTimeSeconds = 2; // seconds
 
 	private const float TO_BLACK = 1;
 	private const float FROM_BLACK = -1;

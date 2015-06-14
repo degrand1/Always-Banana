@@ -19,5 +19,15 @@ public class ArtTestUpdate : MonoBehaviour {
 				GetComponent<BlackScreen>().FadeFromBlack();
 			}
 		}
+
+		// fade in and out using DoneAction/delegate
+		if ( Input.GetKey( "delete" ) ) {
+			if ( GetComponent<BlackScreen>() != null ) {
+				GetComponent<BlackScreen>().FadeToBlack( () => {
+					// do stuff
+					GetComponent<BlackScreen>().FadeFromBlack();
+				} );
+			}
+		}
 	}
 }
