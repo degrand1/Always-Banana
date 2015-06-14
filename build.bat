@@ -9,13 +9,13 @@
 @if not exist %DIST% mkdir %DIST%
 
 @REM win32
-%UNITYEDITOR% -quit -batchMode -nographics -projectPath %WD% -buildTarget win32 -buildWindowsPlayer %DIST%\AlwaysBanana_x86.exe
+%UNITYEDITOR% -quit -batchMode -nographics -projectPath %WD% -buildTarget win32 -buildWindowsPlayer %DIST%\win32\AlwaysBanana.exe
 
 @REM win64
-%UNITYEDITOR% -quit -batchMode -nographics -projectPath %WD% -buildTarget win64 -buildWindows64Player %DIST%\AlwaysBanana_x64.exe
+%UNITYEDITOR% -quit -batchMode -nographics -projectPath %WD% -buildTarget win64 -buildWindows64Player %DIST%\win64\AlwaysBanana_x64.exe
 
 @REM OS X
-%UNITYEDITOR% -quit -batchMode -nographics -projectPath %WD% -buildTarget osx -buildOSXUniversalPlayer %DIST%\AlwaysBanana.app
+%UNITYEDITOR% -quit -batchMode -nographics -projectPath %WD% -buildTarget osx -buildOSXUniversalPlayer %DIST%\osx\AlwaysBanana.app
 
 @REM Linux
-%UNITYEDITOR% -quit -batchMode -nographics -projectPath %WD% -buildTarget linux -buildLinuxUniversalPlayer %DIST%\AlwaysBanana
+%UNITYEDITOR% -quit -batchMode -nographics -projectPath %WD% -buildTarget linux -buildLinuxUniversalPlayer %DIST%\linux\AlwaysBanana
