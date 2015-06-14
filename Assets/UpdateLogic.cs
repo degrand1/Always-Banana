@@ -30,7 +30,6 @@ public class UpdateLogic : MonoBehaviour {
 	public float DelayAfterFullTextDisplay;
 	public Color TherapistTextColor;
 	public Color PatientTextColor;
-	public GameObject Title;
 
 	private int NumCharactersToDisplay;
 	private float CurrentTime;
@@ -77,12 +76,12 @@ public class UpdateLogic : MonoBehaviour {
 
 	void LoadPushStartOverlay()
 	{
-		Title.GetComponent<Renderer>().enabled = true;
+		GetComponent<SplashScreen>().RefreshAndShow();
 	}
 
 	void RemovePushStartOverlay()
 	{
-		Title.GetComponent<Renderer>().enabled = false;
+		GetComponent<SplashScreen>().FadeOut();
 	}
 
 	void BeginSession()
