@@ -40,7 +40,6 @@ public class UpdateLogic : MonoBehaviour {
 	public State CurrentState;
 
 	public PatientData[] Patients;
-	public Sprite[] PatientSprites;
 	public GameObject CurrentPatientObject;
 
 	// Use this for initialization
@@ -56,7 +55,7 @@ public class UpdateLogic : MonoBehaviour {
 		//Assume the therapist or patient will always begin the conversation
 		Content.color = Patients[CurrentPatient].Data[CurrentData].Type == MessageType.THERAPIST ? TherapistTextColor : PatientTextColor;
 		CurrentState = State.PRESS_SPACE_TO_START;
-		CurrentPatientObject.GetComponent<SpriteRenderer>().sprite = PatientSprites[CurrentPatient];
+		CurrentPatientObject.GetComponent<SpriteRenderer>().sprite = Patients[CurrentPatient].GetComponent<SpriteRenderer>().sprite;
 	}
 	
 	void UpdateTextDisplay()
@@ -100,7 +99,7 @@ public class UpdateLogic : MonoBehaviour {
 		CurrentData = 0;
 		UpdateTextState();
 		CurrentState = State.WAITING_FOR_INPUT;
-		CurrentPatientObject.GetComponent<SpriteRenderer>().sprite = PatientSprites[CurrentPatient];
+		CurrentPatientObject.GetComponent<SpriteRenderer>().sprite = Patients[CurrentPatient].GetComponent<SpriteRenderer>().sprite;
 		GetComponent<BlackScreen>().FadeFromBlack( BeginSession );
 	}
 

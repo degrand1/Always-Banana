@@ -11,12 +11,12 @@ public class SplashScreen : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-	 splashTex = Resources.Load( "splash/title" ) as Texture;
-	 var data = Resources.LoadAll( "splash/sub", typeof( Texture ) );
+		splashTex = Resources.Load( "splash/title" ) as Texture;
+		var data = Resources.LoadAll( "splash/sub", typeof( Texture ) );
 
-	 subtitleTexList = new Texture2D[ data.Length ];
-	 for ( var i = 0; i < data.Length; i++ ) {
-		subtitleTexList[i] = data[i] as Texture2D;
+		subtitleTexList = new Texture2D[ data.Length ];
+		for ( var i = 0; i < data.Length; i++ ) {
+			subtitleTexList[i] = data[i] as Texture2D;
 	 }
 
 		var subtitleIndex = PlayerPrefs.GetInt( "PatientsSeen" ) - 1;
