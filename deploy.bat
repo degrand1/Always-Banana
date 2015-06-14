@@ -8,3 +8,7 @@ set WD=%cd%
 set DIST=Play
 if not exist %DIST% mkdir %DIST%
 %UNITYEDITOR% -quit -batchMode -nographics -projectPath %WD% -buildTarget web -buildWebPlayer %DIST%
+
+
+
+git subtree push --prefix %DIST% origin gh-pages
