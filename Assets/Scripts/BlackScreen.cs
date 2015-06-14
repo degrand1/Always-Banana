@@ -40,8 +40,10 @@ public class BlackScreen: MonoBehaviour {
 			fadeDirection = HOLD;
 			alphaFadeValue = Mathf.Clamp01( alphaFadeValue );
 			if ( doneAction != null ) {
+				DoneAction OldDoneAction = doneAction;
 				doneAction();
-				doneAction = null;
+				//null out the doneAction unless we assigned a new one
+				if( OldDoneAction == doneAction ) doneAction = null;
 			}
 		}
 	}

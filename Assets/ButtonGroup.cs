@@ -8,6 +8,7 @@ public class ButtonGroup : MonoBehaviour {
 	public Button DownButton;
 	public Button LeftButton;
 	public Button RightButton;
+	public UpdateLogic Logic;
 
 	public void DisableButtons()
 	{
@@ -17,12 +18,18 @@ public class ButtonGroup : MonoBehaviour {
 		RightButton.gameObject.SetActive(false);
 	}
 
-	public void EnableButtons()
+	void SetupButton( Button TheButton, string Text )
 	{
-		UpButton.gameObject.SetActive(true);
-		DownButton.gameObject.SetActive(true);
-		LeftButton.gameObject.SetActive(true);
-		RightButton.gameObject.SetActive(true);
+		TheButton.gameObject.SetActive(true);
+		TheButton.GetComponentInChildren<Text>().text = Text;
+	}
+
+	public void EnableButtons( string UpText, string DownText, string LeftText, string RightText)
+	{
+		SetupButton(UpButton, UpText);
+		SetupButton(DownButton, DownText);
+		SetupButton(LeftButton, LeftText);
+		SetupButton(RightButton, RightText);
 	}
 
 	void Start() {
@@ -33,18 +40,18 @@ public class ButtonGroup : MonoBehaviour {
 	}
 
 	public void UpClicked() {
-		Debug.Log ("Up button clicked");
+		Logic.ButtonPushed(UpdateLogic.ButtonType.UP);
 	}
 
 	public void DownClicked() {
-		Debug.Log ("Down button clicked");
+		Logic.ButtonPushed(UpdateLogic.ButtonType.DOWN);
 	}
 
 	public void LeftClicked() {
-		Debug.Log ("Left button clicked");
+		Logic.ButtonPushed(UpdateLogic.ButtonType.LEFT);
 	}
 
 	public void RightClicked() {
-		Debug.Log ("Right button clicked");
+		Logic.ButtonPushed(UpdateLogic.ButtonType.RIGHT);
 	}
 }
