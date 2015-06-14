@@ -29,5 +29,11 @@ public class ArtTestUpdate : MonoBehaviour {
 				} );
 			}
 		}
+
+		if ( Input.GetKeyUp( "f5" ) ) {
+			if ( GetComponent<SplashScreen>() != null ) {
+				GetComponent<SplashScreen>().Refresh();
+			}
+		}
 	}
 }

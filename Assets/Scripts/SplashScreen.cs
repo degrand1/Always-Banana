@@ -6,10 +6,18 @@ using System.Collections;
 public class SplashScreen : MonoBehaviour {
 	private Texture splashTex;
 	private Texture subtitleTex;
+	public Texture2D[] subtitleTexList;
 
 	// Use this for initialization
 	void Start () {
 	 splashTex = Resources.Load( "splash/title" ) as Texture;
+	 var data = Resources.LoadAll( "splash/sub", typeof( Texture ) );
+
+	 subtitleTexList = new Texture2D[ data.Length ];
+	 for ( var i = 0; i < data.Length; i++ ) {
+		subtitleTexList[i] = data[i] as Texture2D;
+	 }
+
 	 // REMOVEME
 	 PlayerPrefs.SetInt( "PatientsSeen", 0 );
 	}
@@ -34,7 +42,13 @@ public class SplashScreen : MonoBehaviour {
 	}
 
 	// loads a new catchphrase
-	void Refresh() {
-	 PlayerPrefs.SetInt( "PatientsSeen", PlayerPrefs.GetInt( "PatientsSeen" ) + 1 );
+	public void Refresh() {
+		PlayerPrefs.SetInt( "PatientsSeen", PlayerPrefs.GetInt( "PatientsSeen" ) + 1 );
+		var subtitleIndex = PlayerPrefs.GetInt( "PatientsSeen" ) - 1; // the first time we run the game, the subtitle is blank (null), by design
+		if ( subtitleIndex >= subtitleTexList.Length ) {
+			subtitleTex = null;
+		} else {
+			subtitleTex = subtitleTexList[ subtitleIndex ];
+		}
 	}
 }
