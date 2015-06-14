@@ -30,6 +30,7 @@ public class UpdateLogic : MonoBehaviour {
 	public float DelayAfterFullTextDisplay;
 	public Color TherapistTextColor;
 	public Color PatientTextColor;
+	public int StartingConversation;
 
 	private int NumCharactersToDisplay;
 	private float CurrentTime;
@@ -48,7 +49,7 @@ public class UpdateLogic : MonoBehaviour {
 		NumCharactersToDisplay = 0;
 		CurrentTime = 0;
 		CurrentData = 0;
-		CurrentPatient = 0;
+		CurrentPatient = StartingConversation;
 		MaxNumPatients = Patients.Length;
 		CurrentStringLength = Patients[CurrentPatient].Data[CurrentData].Message.Length;
 		Content.text = "";
