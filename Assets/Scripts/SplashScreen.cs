@@ -18,6 +18,11 @@ public class SplashScreen : MonoBehaviour {
 	 for ( var i = 0; i < data.Length; i++ ) {
 		subtitleTexList[i] = data[i] as Texture2D;
 	 }
+
+		var subtitleIndex = PlayerPrefs.GetInt( "PatientsSeen" ) - 1;
+		if ( subtitleIndex < subtitleTexList.Length ) {
+			subtitleTex = subtitleTexList[ subtitleIndex ];
+		}
 	}
 	
 	// Update is called once per frame
