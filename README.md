@@ -1,7 +1,7 @@
 Always Banana
 =============
 
-[Play (Unity Web Player)](http://degrand1.github.io/Always-Banana/Builds/Builds.html) | [Jam Entry Page](https://bacongamejam.org/jams/bacongamejam-09/366/)
+[Play (Unity Web Player)](http://degrand1.github.io/Always-Banana/Play.html) | [Jam Entry Page](https://bacongamejam.org/jams/bacongamejam-09/366/)
 
 ![Quality dialog](./Screenshots/BlameParents.png)
 
