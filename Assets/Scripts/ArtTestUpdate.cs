@@ -35,5 +35,9 @@ public class ArtTestUpdate : MonoBehaviour {
 				GetComponent<SplashScreen>().RefreshAndShow();
 			}
 		}
+
+		if ( Input.GetKeyUp( "f6" ) ) {
+			PlayerPrefs.SetInt( "PatientsSeen", 0 );
+		}
 	}
 }
