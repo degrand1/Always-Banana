@@ -87,7 +87,6 @@ public class UpdateLogic : MonoBehaviour {
 	void BeginSession()
 	{
 		CurrentState = State.PRESS_SPACE_TO_START;
-		LoadPushStartOverlay();
 	}
 
 	void SeeNextPatient()
@@ -101,6 +100,7 @@ public class UpdateLogic : MonoBehaviour {
 		UpdateTextState();
 		CurrentState = State.WAITING_FOR_INPUT;
 		CurrentPatientObject.GetComponent<SpriteRenderer>().sprite = Patients[CurrentPatient].GetComponent<SpriteRenderer>().sprite;
+		LoadPushStartOverlay();
 		GetComponent<BlackScreen>().FadeFromBlack( BeginSession );
 	}
 
